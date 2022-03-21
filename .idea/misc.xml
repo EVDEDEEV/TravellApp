@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/drawable/description.xml" value="0.114" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/drawable/home.xml" value="0.114" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout-v27/tour_list.xml" value="0.14583333333333334" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/altay.xml" value="0.25416666666666665" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/altay_item.xml" value="0.17760416666666667" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/arkhiz_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/baikal_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/description.xml" value="0.2" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/sochi_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/layout/tour_list.xml" value="0.20572916666666666" />
+        <entry key="..\:/ASProjects/travellApp/app/src/main/res/menu/bottom_menu.xml" value="0.20572916666666666" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/activity_main.xml" value="0.21773288439955107" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/description.xml" value="0.23854166666666668" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/test.xml" value="0.23854166666666668" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/tour.xml" value="0.23854166666666668" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/tours.xml" value="0.2" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/layout/tours_item.xml" value="0.17760416666666667" />
+        <entry key="..\:/internship/travelApp/travellApp/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
