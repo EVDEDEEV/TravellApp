@@ -30,7 +30,6 @@ class ToursAdapter(private val tours : ArrayList<ToursModel>) :
         return tours.size
     }
 
-
     override fun onBindViewHolder(holder: ToursHolder, position: Int) {
         holder.bind(tours[position])
 
@@ -56,6 +55,8 @@ class ToursAdapter(private val tours : ArrayList<ToursModel>) :
             binding.price.text = toursModel.price
 
         }
+
+
 
     }
 }

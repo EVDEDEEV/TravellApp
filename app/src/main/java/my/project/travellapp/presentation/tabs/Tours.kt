@@ -1,5 +1,6 @@
 package my.project.travellapp.presentation.tabs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Tours : Fragment() {
 
+
     private var binding: ToursBinding? = null
     private var toursAdapter: ToursAdapter? = null
     private val toursViewModel: ToursViewModel by viewModel()
@@ -31,8 +33,8 @@ class Tours : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.tours, container, false)
 
-        initRecyclerTours()
         loadTours()
+        initRecyclerTours()
 
         return binding?.root
 
@@ -47,6 +49,9 @@ class Tours : Fragment() {
 
     }
 
+
+
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadTours() {
 
         toursViewModel.loadTours.observe(viewLifecycleOwner, Observer {
