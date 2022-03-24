@@ -6,16 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.travellapp.R
 import my.project.travellapp.data.models.ToursModel
 import my.project.travellapp.databinding.DescriptionBinding
 import my.project.travellapp.databinding.ToursBinding
-import my.project.travellapp.presentation.di.tours
+import my.project.travellapp.presentation.viewModels.DescriptionViewModel
 import my.project.travellapp.presentation.viewModels.ToursViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -26,6 +24,7 @@ class Tours : Fragment() {
     private var toursAdapter: ToursAdapter? = null
 //    private val toursAdapter by lazy { ToursAdapter(arrayListOf()) }
     private val toursViewModel: ToursViewModel by viewModel()
+    private val descriptionViewModel: DescriptionViewModel by viewModel()
     private var descBinding: DescriptionBinding? = null
 
 
@@ -59,13 +58,13 @@ class Tours : Fragment() {
         binding?.recyclerTours?.layoutManager =
             LinearLayoutManager(context)
 
-        toursAdapter = ToursAdapter()
+//        toursAdapter = ToursAdapter()
 
-//        toursAdapter = ToursAdapter { toursModel: ToursModel ->
-//            addToCard(
-//                toursModel
-//            )
-//        }
+        toursAdapter = ToursAdapter { toursModel: ToursModel ->
+            addToDescription(
+                toursModel
+            )
+        }
 
         binding?.recyclerTours?.adapter = toursAdapter
 
@@ -83,19 +82,32 @@ class Tours : Fragment() {
 
     }
 
-//    override fun onClick(view: View) {
-//        when(view.id) {
-//            R.id.button.
-//
-//        }
-//    }
 
-//    private fun addToCard(toursModel: ToursModel) {
-//        toursViewModel.loadTours(toursModel.name, toursModel.image, toursModel.price, toursModel.id.toString(),
-//            "1")
+    private fun addToDescription(toursModel: ToursModel) {
+        descriptionViewModel.startInsert(toursModel.name, toursModel.image, toursModel.price,
+            toursModel.id.toString(), "")
+    }
+//    private fun loadCoffeeToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
+//                                                 removeFromBasket:AppCompatImageButton){
+//
+//        descriptionViewModel.loadCoffeeToCardFromCardProduct(idProduct.toString()).observe(viewLifecycleOwner, Observer {
+//
+//            val count = it.count()
+//
+//            if (count>0) {
+//                addToBasket.visibility = View.GONE
+//                removeFromBasket.visibility = View.VISIBLE
+//            }
+//            else {
+//                addToBasket.visibility = View.VISIBLE
+//                removeFromBasket.visibility = View.GONE }
+//        })
+
 //    }
 
 
 
 
         }
+
+

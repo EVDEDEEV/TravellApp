@@ -6,9 +6,9 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardCoffee"
+        android:id="@+id/cardDescription"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="300dp"
         android:layout_margin="5dp"
         app:strokeWidth="3dp"
         app:strokeColor="#E4E4E4"
@@ -22,18 +22,18 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageTours"
+                android:id="@+id/imageDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:tintMode="screen"
                 android:layout_marginBottom="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/nameTours"
+                app:layout_constraintBottom_toTopOf="@+id/nameDescription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/price"/>
+                app:layout_constraintEnd_toStartOf="@+id/priceDescription"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/nameTours"
+                android:id="@+id/nameDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -54,19 +54,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/addToCard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:backgroundTint="#FFBF00"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/price"
+                android:id="@+id/priceDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -76,9 +66,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintRight_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

@@ -3,6 +3,7 @@
     <string name="home">ТУРЫ</string>
     <string name="description">ОПИСАНИЕ</string>
     <string name="currency">₽</string>
+    <string name="clearDescription">ОЧИСТИТЬ</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

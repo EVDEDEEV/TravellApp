@@ -9,14 +9,34 @@ import my.project.travellapp.domain.useCase.DescriptionUseCase
 
 class DescriptionViewModel(private val descriptionUseCase: DescriptionUseCase) : ViewModel() {
 
-    fun startInsert(nameProduct:String, descriptionProduct:String, imageProduct:String, priceDesc: String, idSecDesc:String) {
+    fun startInsert(
+        name: String,
+        description: String,
+        image: String,
+        price: String,
+        idSecDesc: String
+    ) {
         insert(
-            DescriptionModel(0, nameProduct, descriptionProduct, imageProduct, priceDesc,idSecDesc)
+            DescriptionModel(0, name, description, image, price, idSecDesc)
         )
     }
 
-   private fun insert(descriptionModel: DescriptionModel) = viewModelScope.launch{
+//    fun updateProductToCard(descriptionModel: DescriptionModel) = viewModelScope.launch{
+//
+//        descriptionUseCase.updateProductToCard(descriptionModel)
+//    }
 
+    val loadDescriptionFromTours = descriptionUseCase.loadDescriptionFromTours()
+
+//    fun loadCoffeeToCardFromCardProduct(idProduct:String): LiveData<List<DescriptionModel>> {
+//        return descriptionUseCase.loadCoffeeToCardFromCardProduct(idProduct)
+//    }
+
+   private fun insert(descriptionModel: DescriptionModel) = viewModelScope.launch{
         descriptionUseCase.insertDescription(descriptionModel)
    }
+
+    fun clearDescription() = viewModelScope.launch{
+        descriptionUseCase.clearDescription()
+    }
 }

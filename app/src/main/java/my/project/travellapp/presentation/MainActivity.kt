@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
 
 
-
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         toursViewModel.migration(this)
@@ -55,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         binding?.bottomMainMenu?.selectedItemId = R.id.homeBottomMainMenu
 
     }
+
 }
 
 

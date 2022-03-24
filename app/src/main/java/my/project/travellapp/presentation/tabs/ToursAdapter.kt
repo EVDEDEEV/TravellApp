@@ -9,9 +9,10 @@ import com.squareup.picasso.Picasso
 import my.project.travellapp.R
 import my.project.travellapp.data.models.DescriptionModel
 import my.project.travellapp.data.models.ToursModel
+import my.project.travellapp.databinding.DescriptionBinding
 import my.project.travellapp.databinding.ToursItemBinding
 
-class ToursAdapter() :
+class ToursAdapter(private val addToDescription:(ToursModel)->Unit) :
     RecyclerView.Adapter<ToursAdapter.ToursHolder>() {
 
 //    private val addToCard:(ToursModel)->Unit
@@ -33,7 +34,7 @@ class ToursAdapter() :
     }
 
     override fun onBindViewHolder(holder: ToursHolder, position: Int) {
-        holder.bind(tours[position])
+        holder.bind(tours[position], addToDescription)
 
     }
 
@@ -50,29 +51,23 @@ class ToursAdapter() :
         fun bind(
 //            descriptionModel: ToursModel,
             toursModel: ToursModel,
-//            addToCard: (ToursModel) -> Unit
+            addToCard: (ToursModel) -> Unit
         ) {
 
             val getImage = toursModel.image
             Picasso.get().load(getImage).into(binding.imageTours)
             binding.nameTours.text = toursModel.name
             binding.shortDescription.text = toursModel.shortDescription
-            binding.button.text = toursModel.shortDescription
+//            binding.button.text = toursModel.shortDescription
             binding.price.text = toursModel.price
 
 
-//            binding?.button?.setOnClickListener(View.OnClickListener {
-//                addToCard(toursModel)
+            binding.addToCard.setOnClickListener(View.OnClickListener {
+                addToCard(toursModel)
 
-//            })
+            })
 
-
-
-
-
-
-
-        }
+       }
 
 
 
