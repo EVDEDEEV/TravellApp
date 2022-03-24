@@ -2,6 +2,7 @@ package my.project.travellapp.domain.useCase
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import my.project.travellapp.data.models.DescriptionModel
 import my.project.travellapp.data.models.ToursModel
 import my.project.travellapp.domain.repository.ToursCall
 
@@ -12,6 +13,9 @@ class ToursUseCase (private val toursCall: ToursCall) {
         return toursCall.loadTours()
 
     }
+
+//    suspend fun insert(toursModel: ToursModel) {
+//        toursCall.insert(toursModel)    }
 
     suspend fun startMigration (context: Context) {
 

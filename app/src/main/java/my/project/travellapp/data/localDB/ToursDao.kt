@@ -9,6 +9,7 @@ import my.project.travellapp.data.models.ToursModel
 
 @Dao
 interface ToursDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(toursModel: ToursModel)
 

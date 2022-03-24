@@ -21,6 +21,7 @@ class Description : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.description, container, false)
 
+
         return binding?.root
     }
 

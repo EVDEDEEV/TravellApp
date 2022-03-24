@@ -6,9 +6,13 @@ import my.project.travellapp.data.dataSource.ToursDataSource
 import my.project.travellapp.data.dataSourceIMPL.ToursApiDataSourceIMPL
 import my.project.travellapp.data.dataSourceIMPL.ToursDataSourceIMPL
 import my.project.travellapp.data.localDB.LocalDataBase
+import my.project.travellapp.data.repository.DescriptionRepository
 import my.project.travellapp.data.repository.ToursRepository
+import my.project.travellapp.domain.repository.DescriptionCall
 import my.project.travellapp.domain.repository.ToursCall
+import my.project.travellapp.domain.useCase.DescriptionUseCase
 import my.project.travellapp.domain.useCase.ToursUseCase
+import my.project.travellapp.presentation.viewModels.DescriptionViewModel
 import my.project.travellapp.presentation.viewModels.ToursViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -43,3 +47,20 @@ val tours = module {
     viewModel { ToursViewModel(get()) }
 
 }
+    val description = module {
+
+        single {
+            Room.databaseBuilder(androidContext(), LocalDataBase::class.java,
+                "dbD").build()
+        }
+
+        single { get<LocalDataBase>().descriptionDao }
+
+
+        single<DescriptionCall> { DescriptionRepository(get()) }
+
+        single { DescriptionUseCase(get()) }
+
+        viewModel { DescriptionViewModel(get()) }
+
+    }

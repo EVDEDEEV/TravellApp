@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import my.project.travellapp.R
 import my.project.travellapp.databinding.ActivityMainBinding
 import my.project.travellapp.presentation.tabs.Description
-import my.project.travellapp.presentation.tabs.Test
 import my.project.travellapp.presentation.tabs.Tours
 import my.project.travellapp.presentation.viewModels.ToursViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -17,6 +16,10 @@ class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
     private val toursViewModel: ToursViewModel by viewModel()
+
+    private fun addToDescription() {
+
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
