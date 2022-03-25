@@ -12,7 +12,7 @@ import my.project.travellapp.domain.useCase.ToursUseCase
 
 class ToursViewModel(private val toursUseCase: ToursUseCase) : ViewModel() {
 
-    //    , private val descriptionUseCase: DescriptionUseCase
+
     val loadTours = toursUseCase.loadTours()
 
 
@@ -20,10 +20,6 @@ class ToursViewModel(private val toursUseCase: ToursUseCase) : ViewModel() {
         toursUseCase.startMigration(context)
 
     }
-
-//    fun loadTours(name: String, image: String, price: String, toString: String, s: String) {
-//
-//    }
 
 
 }

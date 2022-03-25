@@ -22,11 +22,8 @@ class Tours : Fragment() {
 
     private var binding: ToursBinding? = null
     private var toursAdapter: ToursAdapter? = null
-
-    //    private val toursAdapter by lazy { ToursAdapter(arrayListOf()) }
     private val toursViewModel: ToursViewModel by viewModel()
     private val descriptionViewModel: DescriptionViewModel by viewModel()
-    private var descBinding: DescriptionBinding? = null
 
 
     override fun onCreateView(
@@ -44,21 +41,11 @@ class Tours : Fragment() {
 
     }
 
-//    override fun onViewCreated(view: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        binding = DataBindingUtil.inflate(view, R.layout.tours, container, false)
-//
-//        loadTours()
-//        initRecyclerTours()
-//
-//        return binding?.root
-//    }
 
     private fun initRecyclerTours() {
 
         binding?.recyclerTours?.layoutManager =
             LinearLayoutManager(context)
-
-//        toursAdapter = ToursAdapter()
 
         toursAdapter = ToursAdapter { toursModel: ToursModel ->
             addToDescription(
@@ -86,23 +73,6 @@ class Tours : Fragment() {
         descriptionViewModel.startInsert(toursModel.name, toursModel.image, toursModel.price,
             toursModel.id.toString(), "1")
     }
-//    private fun loadCoffeeToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
-//                                                 removeFromBasket:AppCompatImageButton){
-//
-//        descriptionViewModel.loadCoffeeToCardFromCardProduct(idProduct.toString()).observe(viewLifecycleOwner, Observer {
-//
-//            val count = it.count()
-//
-//            if (count>0) {
-//                addToBasket.visibility = View.GONE
-//                removeFromBasket.visibility = View.VISIBLE
-//            }
-//            else {
-//                addToBasket.visibility = View.VISIBLE
-//                removeFromBasket.visibility = View.GONE }
-//        })
-
-//    }
 
 
 }

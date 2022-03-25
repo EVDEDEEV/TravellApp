@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
@@ -18,7 +19,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class Description : Fragment(), View.OnClickListener {
-//    , View.OnClickListener
 
     private var binding: DescriptionBinding? = null
     private var descriptionAdapter: DescriptionAdapter? = null
@@ -30,7 +30,9 @@ class Description : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?,
     ): View? {
 
+
         binding = DataBindingUtil.inflate(inflater, R.layout.description, container, false)
+
 
         initRecyclerDescription()
         loadDescriptionFromTours()
@@ -61,18 +63,12 @@ class Description : Fragment(), View.OnClickListener {
             descriptionAdapter?.setList(it)
             descriptionAdapter?.notifyDataSetChanged()
 
-//            val total:Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
-//
-//            binding?.totalOrder?.text = total.toString()
 
         })
 
 
     }
 
-//    private fun clearDescription() {
-//        descriptionViewModel.clearDescription()
-//    }
 
     override fun onClick(view: View) {
         when (view.id) {

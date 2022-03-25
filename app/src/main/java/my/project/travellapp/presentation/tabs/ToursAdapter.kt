@@ -3,6 +3,7 @@ package my.project.travellapp.presentation.tabs
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -15,10 +16,8 @@ import my.project.travellapp.databinding.ToursItemBinding
 class ToursAdapter(private val addToDescription: (ToursModel) -> Unit) :
     RecyclerView.Adapter<ToursAdapter.ToursHolder>() {
 
-    //    private val addToCard:(ToursModel)->Unit
-    private val tours = ArrayList<ToursModel>()
-//    private var description: DescriptionBinding()
 
+    private val tours = ArrayList<ToursModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToursHolder {
 
@@ -27,7 +26,9 @@ class ToursAdapter(private val addToDescription: (ToursModel) -> Unit) :
             DataBindingUtil.inflate(layoutInflater, R.layout.tours_item, parent, false)
         return ToursHolder(binding)
 
+
     }
+
 
     override fun getItemCount(): Int {
         return tours.size
@@ -35,6 +36,7 @@ class ToursAdapter(private val addToDescription: (ToursModel) -> Unit) :
 
     override fun onBindViewHolder(holder: ToursHolder, position: Int) {
         holder.bind(tours[position], addToDescription)
+
 
     }
 
@@ -49,26 +51,26 @@ class ToursAdapter(private val addToDescription: (ToursModel) -> Unit) :
     class ToursHolder(val binding: ToursItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-//            descriptionModel: ToursModel,
             toursModel: ToursModel,
-            addToCard: (ToursModel) -> Unit,
+            addToDescription: (ToursModel) -> Unit,
         ) {
 
             val getImage = toursModel.image
             Picasso.get().load(getImage).into(binding.imageTours)
             binding.nameTours.text = toursModel.name
-//            binding.shortDescription.text = toursModel.shortDescription
             binding.addToCard.text = toursModel.shortDescription
             binding.price.text = toursModel.price
 
 
-            binding.addToCard.setOnClickListener(View.OnClickListener {
-                addToCard(toursModel)
+            binding.addToCard.setOnClickListener {
+                addToDescription(toursModel)
 
-            })
+            }
+
 
         }
 
 
     }
+
 }
