@@ -12,7 +12,7 @@ import my.project.travellapp.databinding.DescriptionItemBinding
 
 class DescriptionAdapter :
     RecyclerView.Adapter<DescriptionAdapter.DescriptionHolder>() {
-    private val productsFromCard = ArrayList<DescriptionModel>()
+    private val productsFromTours = ArrayList<DescriptionModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DescriptionHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -22,39 +22,37 @@ class DescriptionAdapter :
     }
 
     override fun getItemCount(): Int {
-        return productsFromCard.size
+        return productsFromTours.size
     }
 
 
-
     override fun onBindViewHolder(holder: DescriptionHolder, position: Int) {
-        holder.bind(productsFromCard[position])
+        holder.bind(productsFromTours[position])
 
     }
 
     fun setList(cardList: List<DescriptionModel>) {
-        productsFromCard.clear()
-        productsFromCard.addAll(cardList)
+        productsFromTours.clear()
+        productsFromTours.addAll(cardList)
 
     }
 
 
-
-    class DescriptionHolder(val binding: DescriptionItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class DescriptionHolder(val binding: DescriptionItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            descriptionModel: DescriptionModel
+            descriptionModel: DescriptionModel,
         ) {
 
-            val getImage = descriptionModel.imageDesc
-            Picasso.get().load(getImage).into(binding.imageDescription)
-            binding.nameDescription.text = descriptionModel.nameDesc
-            binding.shortDescription.text = descriptionModel.descDescription
-            binding.priceDescription.text = descriptionModel.priceDesc
-//            binding.totalPriceProductCard.text = descriptionModel.totalPrice
+            val getImages = descriptionModel.desc
+            Picasso.get().load(getImages).into(binding.imageDescription)
+            binding.nameDescription.text = descriptionModel.name
+            binding.shortDescription.text = descriptionModel.image
+//            binding.priceDescription.text = descriptionModel.idSecDesc
+//            binding.totalPriceProductCard.text = descriptionModel.idSecDesc
 
         }
-
 
 
     }

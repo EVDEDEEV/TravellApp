@@ -6,7 +6,7 @@ import my.project.travellapp.data.models.DescriptionModel
 import my.project.travellapp.data.models.ToursModel
 import my.project.travellapp.domain.repository.ToursCall
 
-class ToursUseCase (private val toursCall: ToursCall) {
+class ToursUseCase(private val toursCall: ToursCall) {
 
     fun loadTours(): LiveData<List<ToursModel>> {
 
@@ -14,10 +14,8 @@ class ToursUseCase (private val toursCall: ToursCall) {
 
     }
 
-//    suspend fun insert(toursModel: ToursModel) {
-//        toursCall.insert(toursModel)    }
 
-    suspend fun startMigration (context: Context) {
+    suspend fun startMigration(context: Context) {
 
         toursCall.startMigration(context)
 

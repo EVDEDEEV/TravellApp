@@ -5,8 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "tours_data_table")
-class ToursModel (
-
+class ToursModel(
 
 
     @PrimaryKey(autoGenerate = true)
@@ -23,6 +22,6 @@ class ToursModel (
     val image: String,
 
     @ColumnInfo(name = "tours_price")
-    val price: String
+    val price: String,
 
     )

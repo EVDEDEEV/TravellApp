@@ -11,7 +11,6 @@ import my.project.travellapp.presentation.viewModels.ToursViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null

@@ -10,11 +10,10 @@ import my.project.travellapp.domain.useCase.DescriptionUseCase
 import my.project.travellapp.domain.useCase.ToursUseCase
 
 
-class ToursViewModel (private val toursUseCase: ToursUseCase): ViewModel() {
+class ToursViewModel(private val toursUseCase: ToursUseCase) : ViewModel() {
 
-//    , private val descriptionUseCase: DescriptionUseCase
+    //    , private val descriptionUseCase: DescriptionUseCase
     val loadTours = toursUseCase.loadTours()
-
 
 
     fun migration(context: Context) = viewModelScope.launch {
@@ -25,7 +24,6 @@ class ToursViewModel (private val toursUseCase: ToursUseCase): ViewModel() {
 //    fun loadTours(name: String, image: String, price: String, toString: String, s: String) {
 //
 //    }
-
 
 
 }

@@ -8,8 +8,9 @@ import my.project.travellapp.data.localDB.ToursDao
 import my.project.travellapp.data.models.ToursModel
 import my.project.travellapp.domain.repository.ToursCall
 
-class ToursRepository(private val toursApiDataSource: ToursApiDataSource,
-                      private val toursDataSource: ToursDataSource,
+class ToursRepository(
+    private val toursApiDataSource: ToursApiDataSource,
+    private val toursDataSource: ToursDataSource,
 ) : ToursCall {
 
 
@@ -24,7 +25,5 @@ class ToursRepository(private val toursApiDataSource: ToursApiDataSource,
     }
 
 }
-//override suspend fun startMigration(context: Context) {
-//    toursDataSource.clear()
-//    toursApiDataSource.startMigration(context)
+
 

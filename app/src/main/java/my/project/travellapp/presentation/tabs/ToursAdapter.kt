@@ -12,10 +12,10 @@ import my.project.travellapp.data.models.ToursModel
 import my.project.travellapp.databinding.DescriptionBinding
 import my.project.travellapp.databinding.ToursItemBinding
 
-class ToursAdapter(private val addToDescription:(ToursModel)->Unit) :
+class ToursAdapter(private val addToDescription: (ToursModel) -> Unit) :
     RecyclerView.Adapter<ToursAdapter.ToursHolder>() {
 
-//    private val addToCard:(ToursModel)->Unit
+    //    private val addToCard:(ToursModel)->Unit
     private val tours = ArrayList<ToursModel>()
 //    private var description: DescriptionBinding()
 
@@ -51,14 +51,14 @@ class ToursAdapter(private val addToDescription:(ToursModel)->Unit) :
         fun bind(
 //            descriptionModel: ToursModel,
             toursModel: ToursModel,
-            addToCard: (ToursModel) -> Unit
+            addToCard: (ToursModel) -> Unit,
         ) {
 
             val getImage = toursModel.image
             Picasso.get().load(getImage).into(binding.imageTours)
             binding.nameTours.text = toursModel.name
-            binding.shortDescription.text = toursModel.shortDescription
-//            binding.button.text = toursModel.shortDescription
+//            binding.shortDescription.text = toursModel.shortDescription
+            binding.addToCard.text = toursModel.shortDescription
             binding.price.text = toursModel.price
 
 
@@ -67,8 +67,7 @@ class ToursAdapter(private val addToDescription:(ToursModel)->Unit) :
 
             })
 
-       }
-
+        }
 
 
     }

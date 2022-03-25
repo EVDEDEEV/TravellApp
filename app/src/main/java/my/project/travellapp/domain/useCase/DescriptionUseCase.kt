@@ -11,19 +11,15 @@ import my.project.travellapp.domain.repository.ToursCall
 class DescriptionUseCase(private val descriptionCall: DescriptionCall) {
 
     suspend fun insertDescription(descriptionModel: DescriptionModel) {
-        descriptionCall.insertDescription(descriptionModel)    }
-
-//    suspend fun updateProductToCard(cardModel: DescriptionModel) {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            descriptionCall.updateProductToCard(cardModel)}
-//    }
+        descriptionCall.insertDescription(descriptionModel)
+    }
 
     fun loadDescriptionFromTours(): LiveData<List<DescriptionModel>> {
-        return descriptionCall.loadDescriptionFromTours()    }
+        return descriptionCall.loadDescriptionFromTours()
+    }
 
-//    fun loadCoffeeToCardFromCardProduct(idProduct:String): LiveData<List<DescriptionModel>> {
-//        return descriptionCall.loadCoffeeToCardFromCardProduct(idProduct)    }
 
     suspend fun clearDescription() {
-        descriptionCall.clearDescription()    }
+        descriptionCall.clearDescription()
+    }
 }

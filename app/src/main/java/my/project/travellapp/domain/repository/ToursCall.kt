@@ -10,7 +10,5 @@ interface ToursCall {
     suspend fun startMigration(context: Context)
 
 
-
 }
 
-//suspend fun startMigration(context: Context)

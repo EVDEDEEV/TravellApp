@@ -22,11 +22,11 @@ class Tours : Fragment() {
 
     private var binding: ToursBinding? = null
     private var toursAdapter: ToursAdapter? = null
-//    private val toursAdapter by lazy { ToursAdapter(arrayListOf()) }
+
+    //    private val toursAdapter by lazy { ToursAdapter(arrayListOf()) }
     private val toursViewModel: ToursViewModel by viewModel()
     private val descriptionViewModel: DescriptionViewModel by viewModel()
     private var descBinding: DescriptionBinding? = null
-
 
 
     override fun onCreateView(
@@ -82,10 +82,9 @@ class Tours : Fragment() {
 
     }
 
-
     private fun addToDescription(toursModel: ToursModel) {
         descriptionViewModel.startInsert(toursModel.name, toursModel.image, toursModel.price,
-            toursModel.id.toString(), "")
+            toursModel.id.toString(), "1")
     }
 //    private fun loadCoffeeToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
 //                                                 removeFromBasket:AppCompatImageButton){
@@ -106,8 +105,6 @@ class Tours : Fragment() {
 //    }
 
 
-
-
-        }
+}
 
 

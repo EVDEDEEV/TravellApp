@@ -10,14 +10,19 @@ import my.project.travellapp.domain.useCase.DescriptionUseCase
 class DescriptionViewModel(private val descriptionUseCase: DescriptionUseCase) : ViewModel() {
 
     fun startInsert(
-        name: String,
-        description: String,
-        image: String,
-        price: String,
-        idSecDesc: String
+        nameDescription: String,
+        descriptionDesc: String,
+        imageDescription: String,
+        priceDescription: String,
+        idSecDesc: String,
     ) {
         insert(
-            DescriptionModel(0, name, description, image, price, idSecDesc)
+            DescriptionModel(0,
+                nameDescription,
+                descriptionDesc,
+                imageDescription,
+                priceDescription,
+                idSecDesc)
         )
     }
 
@@ -32,11 +37,11 @@ class DescriptionViewModel(private val descriptionUseCase: DescriptionUseCase) :
 //        return descriptionUseCase.loadCoffeeToCardFromCardProduct(idProduct)
 //    }
 
-   private fun insert(descriptionModel: DescriptionModel) = viewModelScope.launch{
+    private fun insert(descriptionModel: DescriptionModel) = viewModelScope.launch {
         descriptionUseCase.insertDescription(descriptionModel)
-   }
+    }
 
-    fun clearDescription() = viewModelScope.launch{
+    fun clearDescription() = viewModelScope.launch {
         descriptionUseCase.clearDescription()
     }
 }

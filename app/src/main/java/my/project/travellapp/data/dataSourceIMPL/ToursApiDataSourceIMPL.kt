@@ -11,16 +11,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ToursApiDataSourceIMPL(private val toursDataSource : ToursDataSource) :
+class ToursApiDataSourceIMPL(private val toursDataSource: ToursDataSource) :
     ToursApiDataSource {
 
-    override fun startMigration (context: Context) {
+    override fun startMigration(context: Context) {
 
         val call = ApiClient.instance?.api?.loadToursApi()
-        call?.enqueue(object: Callback<ArrayList<ToursApiModel>> {
+        call?.enqueue(object : Callback<ArrayList<ToursApiModel>> {
             override fun onResponse(
                 call: Call<ArrayList<ToursApiModel>>,
-                response: Response<ArrayList<ToursApiModel>>
+                response: Response<ArrayList<ToursApiModel>>,
             ) {
 
 

@@ -10,21 +10,21 @@ class DescriptionModel(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "desc_id")
-    val idDesc: Int,
+    val id: Int,
 
     @ColumnInfo(name = "desc_name")
-    val nameDesc: String,
+    val name: String,
 
     @ColumnInfo(name = "desc_description")
-    val descDescription: String,
+    val desc: String,
 
     @ColumnInfo(name = "desc_image")
-    val imageDesc: String,
+    val image: String,
 
     @ColumnInfo(name = "desc_price")
-    val priceDesc: String,
+    val price: String,
 
     @ColumnInfo(name = "descDesc_id")
-    val idSecDesc:String,
+    val idSecDesc: String,
 
-)
+    )

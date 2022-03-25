@@ -6,13 +6,13 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardCoffee"
+        android:id="@+id/cardTours"
         android:layout_width="match_parent"
         android:layout_height="165dp"
         android:layout_margin="5dp"
         app:strokeWidth="3dp"
-        app:strokeColor="#E4E4E4"
-        android:backgroundTint="#E4E4E4"
+        app:strokeColor="@color/purple_200"
+        android:backgroundTint="@color/purple_200"
         app:cardElevation="0dp"
         android:focusable="true"
         android:checkable="true">
@@ -37,22 +37,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:background="#E4E4E4"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/shortDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="#E4E4E4"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addToCard"

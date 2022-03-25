@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.MainActivity">
@@ -26,12 +25,12 @@
 
                     <com.google.android.material.appbar.MaterialToolbar
                         android:id="@+id/topMainMenu"
+                        style="@style/Widget.MaterialComponents.Toolbar.Primary"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
                         android:background="@color/black"
                         app:title="@string/app_name"
-                        app:titleTextColor="@color/white"
-                        style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+                        app:titleTextColor="@color/white" />
 
                 </com.google.android.material.appbar.AppBarLayout>
 
@@ -41,7 +40,7 @@
                 android:id="@+id/mainContent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -61,7 +60,7 @@
                 android:elevation="16dp"
                 app:itemIconTint="@color/color_tab"
                 app:itemTextColor="@color/color_tab"
-                app:menu="@menu/bottom_menu"/>
+                app:menu="@menu/bottom_menu" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

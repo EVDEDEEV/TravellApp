@@ -8,13 +8,14 @@ import my.project.travellapp.data.dataSource.ToursDataSource
 import my.project.travellapp.data.localDB.ToursDao
 import my.project.travellapp.data.models.ToursModel
 
-class ToursDataSourceIMPL (private val dao: ToursDao):
+class ToursDataSourceIMPL(private val dao: ToursDao) :
     ToursDataSource {
 
 
     override fun insert(toursModel: ToursModel) {
         CoroutineScope(Dispatchers.IO).launch {
-            dao.insert(toursModel)}
+            dao.insert(toursModel)
+        }
     }
 
     override fun loadTours(): LiveData<List<ToursModel>> {
@@ -24,9 +25,9 @@ class ToursDataSourceIMPL (private val dao: ToursDao):
 
     override suspend fun clear() {
         CoroutineScope(Dispatchers.IO).launch {
-            dao.clear()}
+            dao.clear()
+        }
     }
-
 
 
 }

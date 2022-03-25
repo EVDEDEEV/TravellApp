@@ -47,20 +47,20 @@ val tours = module {
     viewModel { ToursViewModel(get()) }
 
 }
-    val description = module {
+val description = module {
 
-        single {
-            Room.databaseBuilder(androidContext(), LocalDataBase::class.java,
-                "dbD").build()
-        }
-
-        single { get<LocalDataBase>().descriptionDao }
-
-
-        single<DescriptionCall> { DescriptionRepository(get()) }
-
-        single { DescriptionUseCase(get()) }
-
-        viewModel { DescriptionViewModel(get()) }
-
+    single {
+        Room.databaseBuilder(androidContext(), LocalDataBase::class.java,
+            "dbD").build()
     }
+
+    single { get<LocalDataBase>().descriptionDao }
+
+
+    single<DescriptionCall> { DescriptionRepository(get()) }
+
+    single { DescriptionUseCase(get()) }
+
+    viewModel { DescriptionViewModel(get()) }
+
+}
