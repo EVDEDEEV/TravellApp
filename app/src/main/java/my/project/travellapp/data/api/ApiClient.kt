@@ -24,17 +24,11 @@ class ApiClient private constructor() {
 
         val instance: ApiClient?
             @Synchronized get() {
-
                 if (apiClient == null) {
-
                     apiClient =
                         ApiClient()
                 }
-
                 return apiClient
-
-
             }
-
     }
 }

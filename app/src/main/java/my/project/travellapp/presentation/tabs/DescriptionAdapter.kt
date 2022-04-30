@@ -1,7 +1,6 @@
 package my.project.travellapp.presentation.tabs
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -28,13 +27,11 @@ class DescriptionAdapter :
 
     override fun onBindViewHolder(holder: DescriptionHolder, position: Int) {
         holder.bind(productsFromTours[position])
-
     }
 
     fun setList(cardList: List<DescriptionModel>) {
         productsFromTours.clear()
         productsFromTours.addAll(cardList)
-
     }
 
 
@@ -49,12 +46,7 @@ class DescriptionAdapter :
             Picasso.get().load(getImages).into(binding.imageDescription)
             binding.nameDescription.text = descriptionModel.name
             binding.shortDescription.text = descriptionModel.image
-//            binding.priceDescription.text = descriptionModel.idSecDesc
-//            binding.totalPriceProductCard.text = descriptionModel.idSecDesc
-
         }
 
-
     }
-
 }

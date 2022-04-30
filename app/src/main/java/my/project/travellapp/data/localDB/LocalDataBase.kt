@@ -11,5 +11,4 @@ abstract class LocalDataBase : RoomDatabase() {
     abstract val toursDao: ToursDao
     abstract val descriptionDao: DescriptionDao
 
-//    DescriptionModel::class,
 }

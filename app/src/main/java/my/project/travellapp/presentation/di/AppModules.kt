@@ -55,12 +55,7 @@ val description = module {
     }
 
     single { get<LocalDataBase>().descriptionDao }
-
-
     single<DescriptionCall> { DescriptionRepository(get()) }
-
     single { DescriptionUseCase(get()) }
-
     viewModel { DescriptionViewModel(get()) }
-
 }

@@ -11,7 +11,6 @@ import my.project.travellapp.data.models.ToursModel
 class ToursDataSourceIMPL(private val dao: ToursDao) :
     ToursDataSource {
 
-
     override fun insert(toursModel: ToursModel) {
         CoroutineScope(Dispatchers.IO).launch {
             dao.insert(toursModel)
@@ -22,15 +21,9 @@ class ToursDataSourceIMPL(private val dao: ToursDao) :
         return dao.loadTours()
     }
 
-
     override suspend fun clear() {
         CoroutineScope(Dispatchers.IO).launch {
             dao.clear()
         }
     }
-
-
 }
-//override suspend fun clear() {
-//    CoroutineScope(Dispatchers.IO).launch {
-//        dao.clear()}

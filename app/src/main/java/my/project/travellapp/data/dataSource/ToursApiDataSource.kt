@@ -4,5 +4,4 @@ import android.content.Context
 
 interface ToursApiDataSource {
     fun startMigration(context: Context)
-
 }

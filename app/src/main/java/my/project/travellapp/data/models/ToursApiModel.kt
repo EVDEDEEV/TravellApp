@@ -14,5 +14,4 @@ data class ToursApiModel(
     var image: String? = null,
     @SerializedName("price") @Expose
     var price: String? = null,
-
-    )
+)

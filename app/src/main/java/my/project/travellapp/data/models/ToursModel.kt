@@ -23,5 +23,4 @@ class ToursModel(
 
     @ColumnInfo(name = "tours_price")
     val price: String,
-
-    )
+)

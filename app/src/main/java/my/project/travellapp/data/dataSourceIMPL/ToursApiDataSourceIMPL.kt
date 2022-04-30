@@ -15,22 +15,15 @@ class ToursApiDataSourceIMPL(private val toursDataSource: ToursDataSource) :
     ToursApiDataSource {
 
     override fun startMigration(context: Context) {
-
         val call = ApiClient.instance?.api?.loadToursApi()
         call?.enqueue(object : Callback<ArrayList<ToursApiModel>> {
             override fun onResponse(
                 call: Call<ArrayList<ToursApiModel>>,
                 response: Response<ArrayList<ToursApiModel>>,
             ) {
-
-
                 var loadTours: ArrayList<ToursApiModel>? = null
-
                 loadTours?.clear()
-
                 loadTours = (response.body() as ArrayList<ToursApiModel>?)!!
-
-
 
                 for (audit in loadTours) {
 
@@ -47,21 +40,15 @@ class ToursApiDataSourceIMPL(private val toursDataSource: ToursDataSource) :
                             it
                         )
                     }
-
                 }
 
                 Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
-
-
             }
 
             override fun onFailure(call: Call<ArrayList<ToursApiModel>>, t: Throwable) {
                 Toast.makeText(context, "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!", Toast.LENGTH_SHORT).show()
-
             }
         })
-
     }
-
 }
 

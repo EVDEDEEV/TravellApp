@@ -26,5 +26,4 @@ class DescriptionModel(
 
     @ColumnInfo(name = "descDesc_id")
     val idSecDesc: String,
-
-    )
+)

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import my.project.travellapp.data.localDB.DescriptionDao
 import my.project.travellapp.data.models.DescriptionModel
 import my.project.travellapp.domain.repository.DescriptionCall
-import my.project.travellapp.domain.repository.ToursCall
 
 class DescriptionRepository(private val oad: DescriptionDao) : DescriptionCall {
 
@@ -17,9 +16,7 @@ class DescriptionRepository(private val oad: DescriptionDao) : DescriptionCall {
         return oad.loadDescriptionFromTours()
     }
 
-
     override suspend fun clearDescription() {
         oad.clearDescription()
     }
-
 }

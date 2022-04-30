@@ -1,19 +1,15 @@
 package my.project.travellapp.presentation.tabs
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.travellapp.R
-import my.project.travellapp.data.models.DescriptionModel
 import my.project.travellapp.databinding.DescriptionBinding
-import my.project.travellapp.presentation.di.description
 import my.project.travellapp.presentation.viewModels.DescriptionViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -24,25 +20,17 @@ class Description : Fragment(), View.OnClickListener {
     private var descriptionAdapter: DescriptionAdapter? = null
     private val descriptionViewModel: DescriptionViewModel by viewModel()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
 
-
         binding = DataBindingUtil.inflate(inflater, R.layout.description, container, false)
-
 
         initRecyclerDescription()
         loadDescriptionFromTours()
 
-
         binding?.clearDescription?.setOnClickListener(this)
-//        clear()
-
-//        binding?.clearCard?.setOnClickListener(this)
-//        binding?.checkoutCard?.setOnClickListener(this)
 
         return binding?.root
     }

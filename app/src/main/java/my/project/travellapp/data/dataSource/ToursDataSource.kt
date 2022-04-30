@@ -9,4 +9,3 @@ interface ToursDataSource {
     suspend fun clear()
 }
 
-//suspend fun clear()

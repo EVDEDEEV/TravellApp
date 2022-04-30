@@ -20,4 +20,3 @@ interface ToursDao {
     suspend fun clear()
 }
 
-//suspend clear
